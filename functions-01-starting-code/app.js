@@ -8,6 +8,8 @@ const RESULT_DRAW = 'DRAW';
 const RESULT_PLAYER_WINS = 'PLAYER_WINS';
 const RESULT_COMPUTER_WINS = 'COMPUTER_WINS';
 
+let gameIsRunning = false;
+
 const getPlayerChoice = function () {
   const selection = prompt(`${ROCK}, ${PAPER}, ${SCISSORS}?`, '').toUpperCase();
   if (
@@ -52,7 +54,7 @@ startGameBtn.addEventListener('click', function () {
   gameIsRunning = true;
   console.log('Game is starting...');
   const playerChoice = getPlayerChoice();
-  const computerChoice = grtComputerChoice();
+  const computerChoice = getComputerChoice();
   const winner = getWinner(computerChoice, playerChoice);
   console.log(winner);
 });
